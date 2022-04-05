@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Information</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Welcome to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scraper" role="button">Scrape New Data</a></p>
+    </div>
+
+    
+      <div class="col-md-12">
+        <h2 class="heading">Latest Article:</h2>
+        <h3 class="heading">{{mars.news_title}} </h3>
+        <p>{{mars.news_body}}</p>
+      </div>
+      <div class="col-md-12">
+        <h2 class="heading">Featured Image:</h2>
+        <img src = "{{mars.img_url}}"></img>
+      </div>
+      <div>
+        <h2>Mars Facts:</h2>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th>Description</th>
+              <th>Values</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Diameter:</td>
+              <td>6,779 km</td>
+            </tr>
+            <tr>
+              <td>Mass:</td>
+              <td>6.39 × 10^23 kg</td>
+            </tr>
+            <tr>
+              <td>Moons:</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Distance from Sun:</td>
+              <td>227,943,824 km</td>
+            </tr>
+            <tr>
+              <td>Length of Year:</td>
+              <td>687 Earth days</td>
+            </tr>
+            <tr>
+              <td>Temperature:</td>
+              <td>-87 to -5 °C</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h2>Mars Hemispheres:</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <img src = "{{mars.hemi_list[0]['Cerberus Hemisphere Enhanced']}}"width = 200> </img>
+            <h4>Cerbrerus</h4>
+          </div>
+          <div class="col-sm">
+            <img src = "{{mars.hemi_list[1]['Schiaparelli Hemisphere Enhanced']}}"width = 200> </img>
+            <h4>Schiaparelli</h4>
+          </div>
+          <div class="col-sm">
+            <img src = "{{mars.hemi_list[2]['Syrtis Major Hemisphere Enhanced']}}"width = 200> </img>
+            <h4>Syrtis Major</h4>
+          </div>
+          <div class="col-sm">
+              <img src = "{{mars.hemi_list[3]['Valles Marineris Hemisphere Enhanced']}}"width = 200> </img>
+              <h4>Valles Marineris</h4>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</body>
+
+</html>
